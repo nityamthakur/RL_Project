@@ -1,30 +1,51 @@
 from stable_baselines3 import PPO
-from stable_baselines3.common.env_checker import check_env
+from stable_baselines3.common.monitor import Monitor
 
-from env.puzzle_piece_env import PuzzlePieceEnv
+from env.UpdatedEnv import PuzzlePieceEnv
 
+# =========================
+# CONFIG
+# =========================
 
-def main():
-    env = PuzzlePieceEnv(puzzle_size=9)
+PUZZLE_SIZE = 9
+TIMESTEPS = 100000
 
-    check_env(env, warn=True)
+MODEL_NAME = f"./models/ppo_puzzle_agent_{PUZZLE_SIZE}"
 
-    model = PPO(
-        "MlpPolicy",
-        env,
-        verbose=1,
-        learning_rate=0.0003,
-        n_steps=2048,
-        batch_size=64,
-        gamma=0.99
-    )
+# =========================
+# CREATE ENVIRONMENT
+# =========================
 
-    model.learn(total_timesteps=300_000)
+env = PuzzlePieceEnv(
+    puzzle_size=PUZZLE_SIZE
+)
 
-    model.save("puzzle_paradise_testing_agent")
+env = Monitor(env, "./logs")
 
-    print("Training complete. Model saved.")
+# =========================
+# CREATE MODEL
+# =========================
 
+model = PPO(
+    "MlpPolicy",
+    env,
+    verbose=1,
+    learning_rate=0.0003,
+    n_steps=2048,
+    batch_size=64,
+    gamma=0.99,
+)
 
-if __name__ == "__main__":
-    main()
+# =========================
+# TRAIN
+# =========================
+
+model.learn(total_timesteps=TIMESTEPS)
+
+# =========================
+# SAVE MODEL
+# =========================
+
+model.save(MODEL_NAME)
+
+print(f"Training complete for puzzle size {PUZZLE_SIZE}")

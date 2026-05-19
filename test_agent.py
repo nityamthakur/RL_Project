@@ -1,37 +1,60 @@
 import time
+
 from stable_baselines3 import PPO
+from env.UpdatedEnv import PuzzlePieceEnv
 
-from env.puzzle_piece_env import PuzzlePieceEnv
+# =========================
+# CONFIG
+# =========================
 
+PUZZLE_SIZE = 9
 
-def main():
-    env = PuzzlePieceEnv(puzzle_size=9)
-    model = PPO.load("puzzle_paradise_testing_agent")
+MODEL_PATH = f"./models/ppo_puzzle_agent_{PUZZLE_SIZE}"
 
-    obs, info = env.reset()
+# =========================
+# CREATE ENV
+# =========================
 
-    for step in range(100):
-        action, _ = model.predict(obs, deterministic=True)
+env = PuzzlePieceEnv(
+    puzzle_size=PUZZLE_SIZE,
+    render_mode="human"
+)
 
-        obs, reward, terminated, truncated, info = env.step(action)
+# =========================
+# LOAD MODEL
+# =========================
 
-        print(f"Step: {step}")
-        print(f"Action Taken: {action}")
-        print(f"Reward: {reward}")
-        print(f"Info: {info}")
+model = PPO.load(MODEL_PATH)
 
-        env.render()
+# =========================
+# RESET ENV
+# =========================
 
-        time.sleep(0.3)
+obs, info = env.reset()
 
-        if terminated:
-            print("Puzzle completed successfully.")
-            break
+# =========================
+# RUN AGENT
+# =========================
 
-        if truncated:
-            print("Episode ended due to max steps.")
-            break
+for step in range(500):
 
+    action, _ = model.predict(obs, deterministic=True)
 
-if __name__ == "__main__":
-    main()
+    obs, reward, terminated, truncated, info = env.step(action)
+
+    print(f"\nStep: {step}")
+    print(f"Action Taken: {action}")
+    print(f"Reward: {reward}")
+    print(f"Info: {info}")
+
+    env.render()
+
+    time.sleep(0.2)
+
+    if terminated:
+        print("\nPuzzle completed successfully.")
+        break
+
+    if truncated:
+        print("\nEpisode ended due to max steps.")
+        break
