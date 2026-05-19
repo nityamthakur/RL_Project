@@ -93,17 +93,17 @@ without changing environment architecture.
 
 ### Windows
 
-text python -m venv venv venv\Scripts\activate 
+```python -m venv venv venv\Scripts\activate ```
 
 ### Mac/Linux
 
-text python3 -m venv venv source venv/bin/activate 
+```python3 -m venv venv source venv/bin/activate ```
 
 ---
 
 ## Install Dependencies
 
-text pip install -r requirements.txt 
+```pip install -r requirements.txt ```
 
 ---
 
@@ -137,7 +137,7 @@ RL_Puzzle_Testing_Agent/
 
 # 1. Train RL Agent
 
-text python train.py 
+```python train.py ```
 
 This trains a PPO agent and saves the trained model.
 
@@ -145,7 +145,7 @@ This trains a PPO agent and saves the trained model.
 
 # 2. Evaluate RL Agent
 
-text python testing_agent.py 
+```python testing_agent.py ```
 
 This loads the trained model and runs autonomous gameplay interactions.
 
@@ -153,7 +153,7 @@ This loads the trained model and runs autonomous gameplay interactions.
 
 # 3. Run Deterministic Solver
 
-text python scripted_solver.py 
+```python scripted_solver.py ```
 
 This demonstrates guaranteed scalable puzzle completion.
 
@@ -161,7 +161,7 @@ This demonstrates guaranteed scalable puzzle completion.
 
 # 4. Run Scalability Demo
 
-text python multi_size_demo.py 
+```python multi_size_demo.py ```
 
 This demonstrates multiple puzzle sizes using the same environment.
 
@@ -171,7 +171,7 @@ This demonstrates multiple puzzle sizes using the same environment.
 
 The project revolves around a custom Gymnasium environment:
 
-text PuzzlePieceEnv 
+```PuzzlePieceEnv ```
 
 The environment contains:
 
@@ -404,19 +404,19 @@ The next development goals are:
 
 ## Train Agent
 
-text python train.py 
+```python train.py ```
 
 ## Test PPO Agent
 
-text python testing_agent.py 
+```python testing_agent.py ```
 
 ## Run Scripted Solver
 
-text python scripted_solver.py 
+```python scripted_solver.py ```
 
 ## Run Multi-Size Demo
 
-text python multi_size_demo.py 
+```python multi_size_demo.py ```
 
 ---
 
