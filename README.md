@@ -104,7 +104,24 @@ bash pip install -r requirements.txt
 
 # Project Structure
 
-text RL_Puzzle_Testing_Agent/ │ ├── env/ │   └── UpdatedEnv.py │ ├── models/ │   └── ppo_puzzle_agent_9.zip │ ├── logs/ │ ├── train.py ├── testing_agent.py ├── scripted_solver.py ├── multi_size_demo.py │ ├── requirements.txt ├── README.md └── .gitignore 
+RL_Puzzle_Testing_Agent/
+│
+├── env/
+│   └── UpdatedEnv.py
+│
+├── models/
+│   └── ppo_puzzle_agent_9.zip
+│
+├── logs/
+│
+├── train.py
+├── testing_agent.py
+├── scripted_solver.py
+├── multi_size_demo.py
+│
+├── requirements.txt
+├── README.md
+└── .gitignore
 
 ---
 
