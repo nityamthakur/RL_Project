@@ -103,7 +103,7 @@ bash pip install -r requirements.txt
 ---
 
 # Project Structure
-
+```text
 RL_Puzzle_Testing_Agent/
 │
 ├── env/
@@ -122,7 +122,7 @@ RL_Puzzle_Testing_Agent/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
-
+```
 ---
 
 # Running The Project
