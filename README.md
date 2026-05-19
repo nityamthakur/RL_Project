@@ -1,147 +1,202 @@
-# Puzzle Paradise RL Tester
+# RL-Based Automated Puzzle Testing Agent
 
-A Reinforcement Learning proof-of-concept for automated game testing in a VR puzzle environment inspired by Meta Horizon Worlds.
+## Overview
 
-This project explores how RL agents can:
-- interact with game systems,
-- learn gameplay mechanics,
-- discover exploits,
-- optimize actions,
-- and simulate autonomous QA/testing behavior.
+This project is a reinforcement-learning-based gameplay testing proof of concept inspired by automated QA workflows in games.
 
-The current implementation uses a simplified puzzle-placement environment built with Gymnasium and trained using PPO (Proximal Policy Optimization).
+The goal of this project is NOT to build a perfect puzzle-solving AI.
 
----
+Instead, the focus is on demonstrating:
 
-# Project Goal
-
-The long-term goal is to investigate AI-driven automated testing for games, especially:
-- VR games
-- puzzle games
-- interaction-heavy experiences
-- Meta Horizon Worlds–style gameplay
-
-The current environment serves as a sandbox for experimenting with:
+- autonomous gameplay interaction
+- reinforcement learning integration
+- scalable testing environments
+- automated traversal validation
+- gameplay coverage systems
 - reward engineering
-- emergent AI behavior
-- autonomous interaction systems
-- gameplay testing agents
+- generalized environment design
+
+The project uses:
+- Python
+- Gymnasium
+- Stable-Baselines3 (PPO)
+- NumPy
 
 ---
 
-# Current Features
+# Project Features
 
-## Environment Features
+## Custom Puzzle Environment
 
-- Puzzle board simulation
-- Piece selection system
-- Piece placement mechanics
-- Reset system
-- Tidy mechanic
-- Progress tracking
-- Reward shaping
-- Invalid action tracking
+A fully custom Gymnasium environment supporting:
+- dynamic puzzle sizes
+- scalable action spaces
+- scalable observation spaces
+- reward-based interaction systems
 
 ---
 
-# Reinforcement Learning Features
+## Reinforcement Learning Agent
 
-- PPO agent using Stable-Baselines3
-- Custom Gymnasium environment
-- Reward-based learning
-- Exploration tuning
-- Emergent exploit detection
-- Local optimum analysis
+Uses PPO (Proximal Policy Optimization) from Stable-Baselines3 to:
+- learn puzzle interaction behavior
+- optimize placements
+- maximize completion rewards
+
+---
+
+## Deterministic Solver
+
+Includes a scripted benchmark solver capable of:
+- perfect puzzle completion
+- deterministic validation
+- scalability demonstrations
+
+---
+
+## Scalable Architecture
+
+The environment supports:
+- 9-piece puzzles
+- 16-piece puzzles
+- 25-piece puzzles
+- larger future puzzle configurations
+
+without changing environment architecture.
+
+---
+
+# Technologies Used
+
+- Python 3.10+
+- Gymnasium
+- Stable-Baselines3
+- NumPy
+- PPO Reinforcement Learning
+
+---
+
+# Installation
+
+## Clone Repository
+
+bash git clone <your-repo-url> cd RL_Puzzle_Testing_Agent 
+
+---
+
+## Create Virtual Environment
+
+### Windows
+
+bash python -m venv venv venv\Scripts\activate 
+
+### Mac/Linux
+
+bash python3 -m venv venv source venv/bin/activate 
+
+---
+
+## Install Dependencies
+
+bash pip install -r requirements.txt 
 
 ---
 
 # Project Structure
 
-```text
-project/
-│
-├── puzzle_env.py          # Custom Gymnasium environment
-├── train.py               # PPO training script
-├── test_agent.py          # Agent evaluation/testing
-├── requirements.txt
-└── README.md
-```
+text RL_Puzzle_Testing_Agent/ │ ├── env/ │   └── UpdatedEnv.py │ ├── models/ │   └── ppo_puzzle_agent_9.zip │ ├── logs/ │ ├── train.py ├── testing_agent.py ├── scripted_solver.py ├── multi_size_demo.py │ ├── requirements.txt ├── README.md └── .gitignore 
 
+---
 
-**Dependencies**
+# Running The Project
 
-Install Python 3.10+ recommended.
+# 1. Train RL Agent
 
-Required Packages
+bash python train.py 
 
-pip install gymnasium
-pip install stable-baselines3
-pip install numpy
-pip install torch
+This trains a PPO agent and saves the trained model.
 
+---
 
-**Environment Overview**
+# 2. Evaluate RL Agent
 
-The environment simulates a puzzle board where:
+bash python testing_agent.py 
 
-* pieces must be selected,
-* placed into correct slots,
-* and assembled progressively.
+This loads the trained model and runs autonomous gameplay interactions.
 
-The RL agent interacts using discrete actions.
+---
 
-**Observation Space**
+# 3. Run Deterministic Solver
 
-The state includes:
+bash python scripted_solver.py 
 
-* board slot occupancy
-* placed piece status
-* selected piece
-* completion count
-* reset/tidy usage
-* invalid action count
+This demonstrates guaranteed scalable puzzle completion.
 
-**Action Space**
+---
 
-The action space currently includes:
+# 4. Run Scalability Demo
 
-Piece Selection
+bash python multi_size_demo.py 
 
-Select puzzle pieces.
+This demonstrates multiple puzzle sizes using the same environment.
 
-Placement Actions
+---
 
-Place selected piece into board slots.
+# Key Engineering Concepts
 
-Utility Actions
+This project demonstrates:
 
-* Tidy
-* Reset
+- reinforcement learning integration
+- reward engineering
+- environment simulation
+- scalable gameplay systems
+- automated interaction testing
+- generalized environment architecture
+- gameplay metric tracking
 
-⸻
+---
 
-**Reward System**
+# Why PPO?
 
-Current reward logic includes:
+PPO was selected because it is:
+- stable
+- widely adopted
+- efficient for experimentation
+- commonly used in RL research
 
-Action: Reward
-Correct placement: Positive
-Invalid action: Negative
-Reset usage: Strong negative
-Puzzle completion: Large positive
+---
 
-Reward scaling is used to encourage long-term progress rather than repetitive farming behavior.
+# Important Project Positioning
 
-**Current Findings**
+This project should be viewed as:
 
-The PPO agent successfully learned:
+## an RL-based automated gameplay testing framework
 
-* puzzle interaction mechanics,
-* valid placement behavior,
-* and reward optimization.
+NOT simply:
+## a puzzle-solving AI.
 
-The agent also discovered exploit loops, demonstrating:
+The primary focus is:
+- gameplay interaction automation
+- scalable testing infrastructure
+- reinforcement-learning experimentation
 
-* emergent behavior,
-* local optimum exploitation,
-* and reward hacking.
+---
+
+# Future Improvements
+
+- Procedural puzzle generation
+- Curriculum learning
+- Heatmap visualizations
+- Multi-agent systems
+- Automated bug classification
+- Unity/Unreal integration
+- Real gameplay traversal testing
+
+---
+
+# Author
+
+Nityam Thakur
+
+Computer Science: Game Design  
+University of California, Santa Cruz
