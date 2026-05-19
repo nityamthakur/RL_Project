@@ -85,7 +85,7 @@ without changing environment architecture.
 
 ## Clone Repository
 
-text git clone <your-repo-url> cd RL_Puzzle_Testing_Agent 
+``` git clone <your-repo-url> cd RL_Puzzle_Testing_Agent``` 
 
 ---
 
@@ -108,8 +108,28 @@ text pip install -r requirements.txt
 ---
 
 # Project Structure
-
-text RL_Puzzle_Testing_Agent/ │ ├── env/ │   └── UpdatedEnv.py │ ├── models/ │   ├── ppo_puzzle_agent_9.zip │   ├── ppo_puzzle_agent_16.zip │   └── ppo_puzzle_agent_25.zip │ ├── logs/ │ ├── train.py ├── testing_agent.py ├── scripted_solver.py ├── multi_size_demo.py │ ├── requirements.txt ├── README.md └── .gitignore 
+```
+RL_Puzzle_Testing_Agent/
+│
+├── env/
+│   └── UpdatedEnv.py
+│
+├── models/
+│   ├── ppo_puzzle_agent_9.zip
+│   ├── ppo_puzzle_agent_16.zip
+│   └── ppo_puzzle_agent_25.zip
+│
+├── logs/
+│
+├── train.py
+├── testing_agent.py
+├── scripted_solver.py
+├── multi_size_demo.py
+│
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
 
 ---
 
