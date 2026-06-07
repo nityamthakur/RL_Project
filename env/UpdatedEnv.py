@@ -16,7 +16,7 @@ class PuzzlePieceEnv(gym.Env):
         # 0 to puzzle_size-1 = select piece
         # puzzle_size to puzzle_size*2-1 = place selected piece into board slot
         # puzzle_size*2 = tidy
-        # Removed explicit manual reset action to prevent reward manipulation loops
+        # Removed ex
         self.action_space = spaces.Discrete((puzzle_size * 2) + 1)
 
         # Observation Space Setup
