@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a reinforcement-learning-based gameplay testing proof of concept inspired by automated QA workflows in games.
+This project is a reinforcement-learning-based gameplay testing proof of concept inspired by automated QA workflows in games
 
 The goal of this project is NOT to build a perfect puzzle-solving AI.
 
